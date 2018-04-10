@@ -6,12 +6,12 @@ Securely control a remote docker daemon CLI using ssh forwarding, no SSL setup n
 
 If you want it available on your system run the following (you may need elevated privileges for this to work):
 
-    curl -L https://github.com/dvddarias/rdocker/raw/master/rdocker.sh > /usr/local/bin/rdocker
+    curl -L https://github.com/ContentWise/rdocker/raw/master/rdocker.sh > /usr/local/bin/rdocker
     chmod +x /usr/local/bin/rdocker
 
 If you just want it lying around on your file system:
 
-    git clone https://github.com/dvddarias/rdocker.git
+    git clone https://github.com/ContentWise/rdocker.git
     cd rdocker
 
 ## Usage
