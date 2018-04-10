@@ -148,8 +148,8 @@ if [[ $line == $success_msg ]]; then
         echo -e "Local docker client connected to ${COLOR}${remote_host}${NC} docker daemon."
         echo "Route: localhost:${local_port} -> ${remote_host}:${remote_port}"
         echo -e "Press ${RED}Ctrl+D${NC} to stop forwarding and exit the bash session."
-        export PROMPT_COMMAND="echo -en \"${COLOR}docker:${remote_host}${NC} \""
-        bash
+        export DOCKER_HOSTNAME="${remote_host}"
+        bash -l
     fi
 
     kill -15 $CONNECTION_PID
