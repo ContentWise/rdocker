@@ -150,6 +150,9 @@ if [[ $line == $success_msg ]]; then
         echo -e "Press ${RED}Ctrl+D${NC} to stop forwarding and exit the bash session."
         export DOCKER_MACHINE_HOSTNAME="${remote_host}"
         export DOCKER_MACHINE_SSH_AUTH_SOCK=$(ssh -o ControlPath="$control_path" $remote_host echo \$SSH_AUTH_SOCK)
+        export DOCKER_MACHINE_USER_HOME=$(ssh -o ControlPath="$control_path" $remote_host echo \$HOME)
+        export DOCKER_MACHINE_USER_ID=$(ssh -o ControlPath="$control_path" $remote_host id -u)
+        export DOCKER_MACHINE_GROUP_ID=$(ssh -o ControlPath="$control_path" $remote_host id -g)
         bash -l
     fi
 
