@@ -148,7 +148,8 @@ if [[ $line == $success_msg ]]; then
         echo -e "Local docker client connected to ${COLOR}${remote_host}${NC} docker daemon."
         echo "Route: localhost:${local_port} -> ${remote_host}:${remote_port}"
         echo -e "Press ${RED}Ctrl+D${NC} to stop forwarding and exit the bash session."
-        export DOCKER_HOSTNAME="${remote_host}"
+        export DOCKER_MACHINE_HOSTNAME="${remote_host}"
+        export DOCKER_MACHINE_SSH_AUTH_SOCK=$(ssh -o ControlPath="$control_path" $remote_host echo \$SSH_AUTH_SOCK)
         bash -l
     fi
 
