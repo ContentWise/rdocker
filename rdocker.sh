@@ -154,7 +154,7 @@ if [[ $line == $success_msg ]]; then
         export DOCKER_MACHINE_WORKSPACE=${DOCKER_MACHINE_USER_HOME}/workspace
         export DOCKER_MACHINE_USER_ID=$(ssh -o ControlPath="$control_path" $remote_host id -u)
         export DOCKER_MACHINE_GROUP_ID=$(ssh -o ControlPath="$control_path" $remote_host id -g)
-        $SHELL
+        $SHELL -l
     fi
 
     kill -15 $CONNECTION_PID
